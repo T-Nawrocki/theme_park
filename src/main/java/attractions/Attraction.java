@@ -1,6 +1,8 @@
 package attractions;
 
-public abstract class Attraction {
+import behaviours.Reviewed;
+
+public abstract class Attraction implements Reviewed {
     private String name;
     private int rating;
     private int visitCount;
@@ -11,10 +13,12 @@ public abstract class Attraction {
         this.visitCount = 0;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public int getRating() {
         return rating;
     }
