@@ -2,6 +2,7 @@ import attractions.*;
 import behaviours.Reviewed;
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 import stalls.*;
 
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ public class ThemeParkTest {
     private IceCreamStall iceCreamStall;
     private TobaccoStall tobaccoStall;
     private ArrayList<Stall> stalls;
+
+    private Visitor visitor;
 
     @Before
     public void before() {
@@ -63,6 +66,8 @@ public class ThemeParkTest {
         }};
 
         themePark = new ThemePark("Altessington World of Thorpe Towers", attractions, stalls);
+
+        visitor = new Visitor(27, 180, 30);
     }
 
     @Test
@@ -87,6 +92,13 @@ public class ThemeParkTest {
             addAll(stalls);
         }};
         assertEquals(expected, themePark.getAllReviewed());
+    }
+
+    @Test
+    public void visitorCanVisitAttraction() {
+        themePark.visit(visitor, rollerCoaster);
+        assertEquals(1, rollerCoaster.getVisitCount());
+        assertEquals(new ArrayList<Attraction>(){{add(rollerCoaster);}}, visitor.getVisitedAttractions());
     }
 
 }
