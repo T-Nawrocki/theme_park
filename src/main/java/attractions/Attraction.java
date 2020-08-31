@@ -26,4 +26,8 @@ public abstract class Attraction implements Reviewed {
     public int getVisitCount() {
         return visitCount;
     }
+
+    public void incrementVisitCount() {
+        visitCount += 1;
+    }
 }

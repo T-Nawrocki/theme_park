@@ -1,5 +1,7 @@
 import attractions.Attraction;
+import attractions.RollerCoaster;
 import behaviours.Reviewed;
+import people.Visitor;
 import stalls.Stall;
 
 import java.util.ArrayList;
@@ -33,5 +35,11 @@ public class ThemePark {
             addAll(attractions);
             addAll(stalls);
         }};
+    }
+
+
+    public void visit(Visitor visitor, Attraction attraction) {
+        visitor.addVisitedAttraction(attraction);
+        attraction.incrementVisitCount();
     }
 }
