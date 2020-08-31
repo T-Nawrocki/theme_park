@@ -1,4 +1,5 @@
 import attractions.*;
+import behaviours.Reviewed;
 import org.junit.Before;
 import org.junit.Test;
 import stalls.*;
@@ -77,6 +78,15 @@ public class ThemeParkTest {
     @Test
     public void hasStalls() {
         assertEquals(stalls, themePark.getStalls());
+    }
+
+    @Test
+    public void canGetAllReviewedObjects() {
+        ArrayList<Reviewed> expected = new ArrayList<Reviewed>() {{
+            addAll(attractions);
+            addAll(stalls);
+        }};
+        assertEquals(expected, themePark.getAllReviewed());
     }
 
 }
