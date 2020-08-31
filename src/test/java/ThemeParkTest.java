@@ -36,9 +36,24 @@ public class ThemeParkTest {
             add(rollerCoaster);
         }};
 
-        candyflossStall = new CandyflossStall("Sweetshop", "A. Candyman", ParkingSpot.A1, 10);
-        iceCreamStall = new IceCreamStall("ICE CREAM", "I. Screamseller", ParkingSpot.A2, 5);
-        tobaccoStall = new TobaccoStall("Why Is This In A ThemePark?", "Shady Steve", ParkingSpot.A3, 1);
+        candyflossStall = new CandyflossStall(
+                "Sweetshop",
+                "A. Candyman",
+                ParkingSpot.A1,
+                10
+        );
+        iceCreamStall = new IceCreamStall(
+                "ICE CREAM",
+                "I. Screamseller",
+                ParkingSpot.A2,
+                5
+        );
+        tobaccoStall = new TobaccoStall(
+                "Why Is This In A ThemePark?",
+                "Shady Steve",
+                ParkingSpot.A3,
+                1
+        );
 
         stalls = new ArrayList<Stall>() {{
             add(candyflossStall);
